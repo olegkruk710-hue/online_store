@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <h1>Online Store</h1>
+        <a href="#" id="CreateProductDetailBtn">Добавить продукт</a>
+        <a href="cartPage.html" class="cart-link">
+            Корзина
+            <span id="cartCount">0</span>
+        </a>
+        <a href="#" id="favoriteProducts">Избранное<span class="heart-logo">&hearts;</span></a>
+    </header>
+    <main>
+        <section class="controls">
+            <input 
+                type="text"
+                id="searchInput"
+                placeholder="Введите название товара">
+            <select id="categorySelect">
+                <option value="all">Все категории</option>
+            </select>
+        </section>
+        <p id="message"></p>
+        <section id="products" class="products">
+        </section>
+    </main>
+
+    <div class="modal hidden" id="productModal">
+        <div class="modal-content">
+            <button id="closeProduct">Закрыть</button>
+            <div id="productDetail">
+
+            </div>
+        </div>
+    </div>
+    <div class="modal hidden" id="createProductModal">
+        <div class="modal-content">
+            <button id="closeCreateProductModal">Закрыть</button>
+            <div id="createProductDetail">
+                <form id="productForm">
+                    <input type="text" name="title" placeholder="Титул" required>
+                    <input type="text" name="description" placeholder="Описание" required>
+                    <input type="text" name="category" placeholder="Категория" required>
+                    <input type="number" name="price" placeholder="Цена" required>
+                    <input type="text" name="quantity" placeholder="Кол-во на складе" required>
+                    <input type="file" name="image" required>
+                    <button type="submit" id="addProductBtn">Добавить продукт</button>
+                </form>
+                <p id="formsMessage"></p>
+            </div>
+        </div>
+    </div>
+    <div class="modal hidden" id="showFavoritesProductsModal">
+        <div class="modal-content">
+            <div class="favorite-header">
+                <h3>Избранное</h3>
+            <button id="closeFavoritesProductsModalBtn">Закрыть</button>
+            </div>
+            <div class="container-forFavorites" id="containerForFavorites">
+
+            </div>
+        </div>
+    </div>
+    <script src="./js/main.js" type="module"></script>
+</body>
+</html>
